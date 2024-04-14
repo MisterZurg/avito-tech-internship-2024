@@ -1,1 +1,25 @@
-POST localhost:8080/banner
+POST localhost:8080/banner HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Accept: */*
+
+{
+  "tag_ids": [
+    0
+  ],
+  "feature_id": 0,
+  "content": {
+    "title": "some_title",
+    "text": "some_text",
+    "url": "some_url"
+  },
+  "is_active": true
+}
+
+###
+
+GET localhost:8080/banner HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Accept: */*
+token: admin_token
