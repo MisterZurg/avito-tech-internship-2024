@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  avito-db:
+    container_name: avito-db
+    environment:
+      POSTGRES_HOST: "avito-db"
+    build:
+      context: ../
+      dockerfile: ./build/db/Dockerfile
+      args:
+        LOCAL: "true"
+    restart: always
+    networks:
+      - avito-dev
+    hostname: avito-db
+    ports:
+      - "5432:5432"
+
+#  avito-app:
+#    container_name: avito-app
+#    environment:
+#      POSTGRES_HOST: "avito-db"
+#    build:
+#      context: ../
+#      dockerfile: ./build/app/Dockerfile
+#      args:
+#        LOCAL: "true"
+#    ports:
+#      - "8080:8080"
+#      - "8090:8090"
+#    depends_on:
+#      - avito-db
+#    links:
+#      - avito-db
+#    networks:
+#      - avito-dev
+#    restart: always
+
+networks:
+  avito-dev:
+    driver: bridge

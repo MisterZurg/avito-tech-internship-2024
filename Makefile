@@ -1,4 +1,12 @@
-.PHONY: generate generate-server generate-models
+.PHONY: generate generate-server generate-models deploy destroy
+deploy:
+	docker-compose -f ./build/docker-compose.yml rm && \
+    docker-compose -f ./build/docker-compose.yml build --no-cache && \
+    docker-compose -f ./build/docker-compose.yml up
+
+destroy:
+	 docker-compose -f ./build/docker-compose.yml down
+
 
 generate: generate-server generate-models
 
