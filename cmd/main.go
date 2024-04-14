@@ -18,7 +18,7 @@ const (
 
 func setupEchoServer(si api.ServerInterface) *echo.Echo {
 	e := echo.New()
-	// This implements the pet store interface
+	// This implements the pet store interface.
 	api.RegisterHandlers(e, si)
 
 	return e

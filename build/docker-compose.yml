@@ -17,25 +17,25 @@ services:
     ports:
       - "5432:5432"
 
-#  avito-app:
-#    container_name: avito-app
-#    environment:
-#      POSTGRES_HOST: "avito-db"
-#    build:
-#      context: ../
-#      dockerfile: ./build/app/Dockerfile
-#      args:
-#        LOCAL: "true"
-#    ports:
-#      - "8080:8080"
-#      - "8090:8090"
-#    depends_on:
-#      - avito-db
-#    links:
-#      - avito-db
-#    networks:
-#      - avito-dev
-#    restart: always
+  avito-app:
+    container_name: avito-app
+    environment:
+      POSTGRES_HOST: "avito-db"
+    build:
+      context: ../
+      dockerfile: ./build/app/Dockerfile
+      args:
+        LOCAL: "true"
+    ports:
+      - "8080:8080"
+      - "8090:8090"
+    depends_on:
+      - avito-db
+    links:
+      - avito-db
+    networks:
+      - avito-dev
+    restart: always
 
 networks:
   avito-dev:

@@ -28,7 +28,7 @@ type Banner struct {
 }
 
 // Получение всех баннеров c фильтрацией по фиче и/или тегу
-// (GET /banner)
+// (GET /banner).
 func (br *BannersRepository) GetBanner(ctx echo.Context, params api.GetBannerParams) error {
 	if *params.Token != auth.UserToken && *params.Token != auth.AdminToken {
 		return ctx.JSON(http.StatusUnauthorized, "Пользователь не авторизован")
@@ -58,7 +58,6 @@ func (br *BannersRepository) GetBanner(ctx echo.Context, params api.GetBannerPar
 	}
 
 	for rows.Next() {
-		//var tagIds []int64
 		banner := new(Banner)
 		err := rows.Scan(
 			&banner.ID,
@@ -79,7 +78,7 @@ func (br *BannersRepository) GetBanner(ctx echo.Context, params api.GetBannerPar
 }
 
 // Создание нового баннера
-// (POST /banner)
+// (POST /banner).
 func (br *BannersRepository) PostBanner(ctx echo.Context, params api.PostBannerParams) error {
 	if *params.Token != "" {
 		return ctx.JSON(http.StatusUnauthorized, "Пользователь не авторизован")
@@ -118,7 +117,7 @@ func (br *BannersRepository) PostBanner(ctx echo.Context, params api.PostBannerP
 }
 
 // Удаление баннера по идентификатору
-// (DELETE /banner/{id})
+// (DELETE /banner/{id}).
 func (br *BannersRepository) DeleteBannerId(ctx echo.Context, id int, params api.DeleteBannerIdParams) error {
 	if *params.Token != "" {
 		return ctx.JSON(http.StatusUnauthorized, "Пользователь не авторизован")
@@ -136,7 +135,7 @@ func (br *BannersRepository) DeleteBannerId(ctx echo.Context, id int, params api
 }
 
 // Обновление содержимого баннера
-// (PATCH /banner/{id})
+// (PATCH /banner/{id}).
 func (br *BannersRepository) PatchBannerId(ctx echo.Context, id int, params api.PatchBannerIdParams) error {
 	if *params.Token != "" {
 		return ctx.JSON(http.StatusUnauthorized, "Пользователь не авторизован")
@@ -198,7 +197,7 @@ func (br *BannersRepository) PatchBannerId(ctx echo.Context, id int, params api.
 }
 
 // Получение баннера для пользователя
-// (GET /user_banner)
+// (GET /user_banner).
 func (br *BannersRepository) GetUserBanner(ctx echo.Context, params api.GetUserBannerParams) error {
 	if *params.Token != "" {
 		return ctx.JSON(http.StatusUnauthorized, "Пользователь не авторизован")
