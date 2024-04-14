@@ -1,6 +1,6 @@
 # Сервис баннеров
 
-[![Lint Status](https://img.shields.io/github/actions/workflow/status/MisterZurg/avito-tech-internship-2024/golangci-lint.yml?branch=main&style=for-the-badge)](https://github.com/MisterZurg/avito-tech-internship-2024/actions?workflow=golangci-lint)
+[![Lint Status](https://img.shields.io/github/actions/workflow/status/MisterZurg/avito-tech-internship-2024/golangci-lint.yml?branch=master&style=for-the-badge)](https://github.com/MisterZurg/avito-tech-internship-2024/actions?workflow=golangci-lint)
 [![Coverage Status](https://img.shields.io/codecov/c/gh/MisterZurg/avito-tech-internship-2024.svg?logo=codecov&style=for-the-badge)](https://codecov.io/gh/MisterZurg/avito-tech-internship-2024)
 [![](http://img.shields.io/badge/godoc-reference-5272B4.svg?style=for-the-badge)](https://pkg.go.dev/MisterZurg/avito-tech-internship-2024)
 
